@@ -1,15 +1,18 @@
 package com.spring.app;
 
-//fill the code
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Book {
 	
-	//fill the code
+	@Value("123")
 	private int bookId;
-	//fill the code
+	@Value("Dennis M.Ritchie")
 	private String bookAuthor;
-	//fill the code
+	@Value("Programming Using C")
 	private String bookTitle;
-	//fill the code
+	 @Value("280.0")
 	private double price;
 
 	public double getPrice() {

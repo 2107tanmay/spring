@@ -1,11 +1,15 @@
 package com.spring.app;
 
-//fill the code
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Order {
 
-	//fill the code
+	@Autowired
 	private Book books;
-	//fill the code
+	@Value("2")
 	private int quantity;
 		
 	public Book getBooks() {
@@ -23,14 +27,18 @@ public class Order {
 	}
 	public double calculateTotalPrice() {
 		
-		double totalPrice=0.0;
-		//fill the code
-		return totalPrice;
+		return books.getPrice()*quantity;
 	}
 	
 	public void displayOrderDetails() {
 		
-		//fill the code
+		System.out.println("Invoice Details:");
+		System.out.println("Book Id:"+books.getBookId());
+		System.out.println("Book Title:"+books.getBookTitle());
+		System.out.println("Author:"+books.getBookAuthor());
+		System.out.println("Quantity:"+quantity);
+		System.out.println("Price of a book:"+books.getPrice());
+		System.out.println("Total Bill Amount:"+calculateTotalPrice());
 		
 	}
 
