@@ -16,8 +16,7 @@ public class GoldRateInfo {
 	
 	public double calculateGoldRate(int goldCarat, double grams) 
 	{
-		double totalRate=0.0;
-		//fill the code
-		return totalRate;
+		double totalRate=rateInfo.get(goldCarat);
+		return totalRate*grams;
 	}
 }
