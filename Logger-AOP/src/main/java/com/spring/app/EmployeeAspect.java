@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmployeeAspect {
 	private static final Logger logger = Logger.getLogger(EmployeeAspect.class);
+	
 	@AfterReturning("execution(* com.spring.app.Company.registerEmployee(..))")
+	
 	public void logRegistrationStatus(){
 		logger.info(new Date() + " : Registration Successful");
 	}

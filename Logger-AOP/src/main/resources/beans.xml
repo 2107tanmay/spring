@@ -12,6 +12,7 @@
 	 
 	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="com.spring.app" />
+	
 	<bean id="empObj" class="com.spring.app.Employee"></bean>
 	<bean id="compObj" class="com.spring.app.Company"></bean>
 	
