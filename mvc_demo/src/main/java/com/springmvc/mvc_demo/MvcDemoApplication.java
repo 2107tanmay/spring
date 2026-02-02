@@ -1,13 +1,14 @@
-package src.main.java.com.springcore.hello_code;
+package com.springmvc.mvc_demo;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HelloCodeApplication {
+public class MvcDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HelloCodeApplication.class, args);
+		SpringApplication.run(MvcDemoApplication.class, args);
 	}
 
 }
