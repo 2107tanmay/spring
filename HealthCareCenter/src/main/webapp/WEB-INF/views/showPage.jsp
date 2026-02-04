@@ -42,7 +42,7 @@ table { margin: 0 auto; }
     </tr>
     <tr>
         <td colspan="2" style="text-align:center;">
-            <input type="submit" value="Book Appointment" name="submit"/>
+            <input type="submit" value="Book Appointment" name="submit" id="submit"/>
         </td>
     </tr>
     <tr>
