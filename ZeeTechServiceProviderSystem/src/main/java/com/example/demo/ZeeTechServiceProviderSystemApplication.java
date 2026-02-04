@@ -6,11 +6,11 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan("com.controller com.service")
-public class ServiceProviderSystemApplication {
+public class ZeeTechServiceProviderSystemApplication {
 
 	public static void main(String[] args) {
 		
-		SpringApplication.run(ServiceProviderSystemApplication.class, args);
+		SpringApplication.run(ZeeTechServiceProviderSystemApplication.class, args);
 	
 	}
 }

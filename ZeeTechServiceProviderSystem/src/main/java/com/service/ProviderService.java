@@ -27,27 +27,21 @@ public class ProviderService {
 		
 	}
 	
-	public boolean addConnection(Connection connectionObj)
+	public boolean updateConnectionType(int connectionNum,String connectionType)
 	{	
-		for(Connection c: connectionList) {
-			if(c.getConnectionNum() == connectionObj.getConnectionNum()) return false;
+		for(Connection conn: connectionList) {
+			if(conn.getConnectionNum()==connectionNum) {
+				conn.setConnectionType(connectionType);
+				return true; //successfully updated YAYYYYYYY
+			}
 		}
-		connectionList.add(connectionObj);
-		return true;
+		
+		return false; //aww hell nah
 	}
 	
-	public ArrayList<Connection> viewAllConnections()
+	public boolean deleteConnection(int connectionNum)
 	{
-		return connectionList;
+		return connectionList.removeIf(conn -> conn.getConnectionNum() == connectionNum); //remove only if connection numbers match
 	}
 	
-	public Connection findConnectionById(int connectionNum)
-	{
-		for (Connection c : connectionList) {
-            if (c.getConnectionNum() == connectionNum) {
-                return c;
-            }
-        }
-        return null;
-	}
 }
