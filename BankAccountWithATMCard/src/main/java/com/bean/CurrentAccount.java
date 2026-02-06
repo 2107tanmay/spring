@@ -1,8 +1,13 @@
 package com.bean;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
 
+@Entity
+@DiscriminatorValue("CURR")
 public class CurrentAccount extends Account {
-	
+	@Column(name="odlimit")
 	private double ODLimit;
 
 	public CurrentAccount() {

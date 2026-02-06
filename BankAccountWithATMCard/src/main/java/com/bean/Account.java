@@ -1,17 +1,39 @@
 package com.bean;
 
-public class Account {
-	
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "account")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="account_type")
+public abstract class Account {
+
+	@Id
+	@Column(name = "account_number")
 	private int accountNumber;
+
+	@Column(name="holder_name")
 	private String holderName;
+
+	@Column(name="balance")
 	private  double balance;
 
+	@OneToOne(mappedBy="account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private ATMCard atmCard;
-	
+
 	public Account() {
-		
+
 	}
-	
+
 	public int getAccountNumber() {
 		return accountNumber;
 	}
@@ -36,9 +58,5 @@ public class Account {
 	public void setAtmCard(ATMCard atmCard) {
 		this.atmCard = atmCard;
 	}
-	
-	
-	
-
 
 }
